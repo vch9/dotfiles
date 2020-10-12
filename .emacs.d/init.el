@@ -49,3 +49,6 @@
 
 (use-package flycheck
   :ensure t)
+
+(use-package lusty-explorer
+  :ensure t)

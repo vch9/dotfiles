@@ -57,3 +57,12 @@
 
 ;; Scala indentation
 (setq scala-indent:step 4)
+
+;; Lusty explorer
+(lusty-explorer-mode)
+
+(add-hook 'lusty-setup-hook 'my-lusty-hook)
+(defun my-lusty-hook ()
+  (define-key lusty-mode-map (kbd "TAB") 'lusty-highlight-next-column)
+  (define-key lusty-mode-map (kbd "<backtab>") 'lusty-highlight-previous-column)
+  (define-key lusty-mode-map (kbd "RET") 'lusty-open-this))
