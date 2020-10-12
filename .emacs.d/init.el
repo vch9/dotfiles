@@ -31,3 +31,21 @@
 
 (use-package org
   :ensure t)
+
+(use-package scala-mode
+  :ensure t)
+
+(use-package company-lsp
+  :ensure t)
+
+(use-package lsp-mode
+  :ensure t)
+
+(use-package lsp-ui
+  :ensure t)
+
+(use-package lsp-metals
+  :ensure t)
+
+(use-package flycheck
+  :ensure t)

@@ -50,3 +50,7 @@
 (setq org-capture-templates
       '(("t" "todo" entry (file+headline "/home/valentin/todo.org" "Tasks")
          "* TODO [#A] %?")))
+
+;; Change lsp file
+(setq config-file "~/.emacs.d/config/lsp.el")
+(load config-file)
