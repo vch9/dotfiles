@@ -30,7 +30,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;;file to save todo items
-(setq org-agenda-files (quote ("/home/valentin/todo.org")))
+(setq org-agenda-files (quote ("/home/valentin/org/todo.org")))
 
 ;;set priority range from A to C with default A
 (setq org-highest-priority ?A)
@@ -48,7 +48,7 @@
 ;;capture todo items using C-c c t
 (define-key global-map (kbd "C-c c") 'org-capture)
 (setq org-capture-templates
-      '(("t" "todo" entry (file+headline "/home/valentin/todo.org" "Tasks")
+      '(("t" "todo" entry (file+headline "/home/valentin/org/todo.org" "Tasks")
          "* TODO [#A] %?")))
 
 ;; Change lsp file
