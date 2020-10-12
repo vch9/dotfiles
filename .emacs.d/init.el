@@ -28,3 +28,6 @@
 
 (use-package whitespace
   :ensure t)
+
+(use-package org
+  :ensure t)
