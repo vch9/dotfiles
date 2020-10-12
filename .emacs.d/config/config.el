@@ -54,3 +54,6 @@
 ;; Change lsp file
 (setq config-file "~/.emacs.d/config/lsp.el")
 (load config-file)
+
+;; Scala indentation
+(setq scala-indent:step 4)
