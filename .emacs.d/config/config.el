@@ -56,7 +56,7 @@
 (load config-file)
 
 ;; Scala indentation
-(setq scala-indent:step 4)
+(setq scala-indent:step 2)
 
 ;; Lusty explorer
 (lusty-explorer-mode)

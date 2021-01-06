@@ -47,8 +47,5 @@
 (use-package lsp-metals
   :ensure t)
 
-(use-package flycheck
-  :ensure t)
-
 (use-package lusty-explorer
   :ensure t)
