@@ -120,11 +120,11 @@
 
 (opam-auto-tools-setup)
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
-;; ## added by OPAM user-setup for emacs / tuareg ## f3132681450089a5e3ec3fce5c23ae43 ## you can edit, but keep this line
+;; ## added by OPAM user-setup for emacs / tuareg ## a003022e5b24ea7f58c4cdc064de2db0 ## you can edit, but keep this line
 ;; Set to autoload tuareg from its original switch when not found in current
 ;; switch (don't load tuareg-site-file as it adds unwanted load-paths)
 (defun opam-tuareg-autoload (fct file doc args)
-  (let ((load-path (cons "/home/valentin/.opam/4.08.1/share/emacs/site-lisp" load-path)))
+  (let ((load-path (cons "/home/valentin/.opam/default/share/emacs/site-lisp" load-path)))
     (load file))
   (apply fct args))
 (when (not (member "tuareg" opam-tools-installed))
@@ -143,3 +143,12 @@
   (dolist (ext '(".cmo" ".cmx" ".cma" ".cmxa" ".cmxs" ".cmt" ".cmti" ".cmi" ".annot"))
     (add-to-list 'completion-ignored-extensions ext)))
 ;; ## end of OPAM user-setup addition for emacs / tuareg ## keep this line
+;; ## added by OPAM user-setup for emacs / ocp-indent ## 7d83abb8205320774226dc49e65d2f4a ## you can edit, but keep this line
+;; Load ocp-indent from its original switch when not found in current switch
+(when (not (assoc "ocp-indent" opam-tools-installed))
+  (autoload 'ocp-setup-indent "/home/valentin/.opam/default/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Tuareg mode")
+  (autoload 'ocp-indent-caml-mode-setup "/home/valentin/.opam/default/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Caml mode")
+  (add-hook 'tuareg-mode-hook 'ocp-setup-indent t)
+  (add-hook 'caml-mode-hook 'ocp-indent-caml-mode-setup  t)
+  (setq ocp-indent-path "/home/valentin/.opam/default/bin/ocp-indent"))
+;; ## end of OPAM user-setup addition for emacs / ocp-indent ## keep this line
