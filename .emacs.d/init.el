@@ -20,9 +20,6 @@
   :ensure t
   :config (which-key-mode))
 
-(use-package cyberpunk-theme
-  :ensure t)
-
 (use-package fill-column-indicator
   :ensure t)
 
