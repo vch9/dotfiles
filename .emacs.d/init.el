@@ -32,7 +32,7 @@
 (use-package scala-mode
   :ensure t)
 
-(use-package company-lsp
+(use-package company
   :ensure t)
 
 (use-package lsp-mode
