@@ -83,3 +83,12 @@
 
 ;; Use less pink and bold on the mode-line and minibuffer (default nil)
 (setq dracula-alternate-mode-line-and-minibuffer t)
+
+;; Copy/paste one line
+(global-set-key "\C-q" "\C-a\C- \C-n\M-w\C-y")
+
+;; Opening/closing parenths
+(setq electric-pair-mode 1)
+
+;; Activate OCaml Merlin by default
+(setq merlin-mode 1)
