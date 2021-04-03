@@ -26,9 +26,6 @@
 (use-package yasnippet
   :ensure t)
 
-(use-package company-lsp
-  :ensure t)
-
 ;; Add metals backend for lsp-mode
 (use-package lsp-metals
   :config (setq lsp-metals-treeview-show-when-views-received t))
