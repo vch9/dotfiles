@@ -15,7 +15,7 @@
  '(fci-rule-color "#383838")
  '(package-selected-packages
    (quote
-    (ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))))
+    (dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
