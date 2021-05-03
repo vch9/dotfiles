@@ -47,7 +47,7 @@
 (use-package lusty-explorer
   :ensure t)
 
-(use-package tabbar
+(use-package magit
   :ensure t)
 
 (add-to-list 'load-path "/home/valentin/Documents/nl-tezos/_opam/share/emacs/site-lisp/")

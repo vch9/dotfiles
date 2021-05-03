@@ -52,10 +52,6 @@
 (setq config-file "~/.emacs.d/config/lsp.el")
 (load config-file)
 
-;; Add tabar config file
-(setq better-tabar "~/.emacs.d/config/better-tabar.el")
-(load better-tabar)
-
 ;; Scala indentation
 (setq scala-indent:step 2)
 
