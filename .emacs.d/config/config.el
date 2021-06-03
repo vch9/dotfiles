@@ -49,8 +49,12 @@
          "* TODO [#A] %?")))
 
 ;; Change lsp file
-(setq config-file "~/.emacs.d/config/lsp.el")
-(load config-file)
+(setq lsp-file "~/.emacs.d/config/lsp.el")
+(load lsp-file)
+
+;; Change org file
+(setq org-file "~/.emacs.d/config/org.el")
+(load org-file)
 
 ;; Scala indentation
 (setq scala-indent:step 2)
@@ -100,3 +104,53 @@
   (delete-other-windows))
 
 (global-set-key (kbd "C-x C-K") 'nuke-all-buffers)
+
+;; drag-stuff
+(drag-stuff-global-mode 1)
+(drag-stuff-define-keys)
+
+;; Reload buffers when changed on disk
+(global-auto-revert-mode t)
+
+;; Highlight mode
+(global-set-key [(control f3)] 'highlight-symbol)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
+
+;; Comment-uncomment
+(global-set-key (kbd "C-x :") 'comment-or-uncomment-region)
+
+;; Enable winum
+(winum-mode)
+
+;; mark-whole-word instead of mark-word
+(defun mark-whole-word (&optional arg allow-extend)
+  "Like `mark-word', but selects whole words and skips over whitespace.
+If you use a negative prefix arg then select words backward.
+Otherwise select them forward.
+
+If cursor starts in the middle of word then select that whole word.
+
+If there is whitespace between the initial cursor position and the
+first word (in the selection direction), it is skipped (not selected).
+
+If the command is repeated or the mark is active, select the next NUM
+words, where NUM is the numeric prefix argument.  (Negative NUM
+selects backward.)"
+  (interactive "P\np")
+  (let ((num  (prefix-numeric-value arg)))
+    (unless (eq last-command this-command)
+      (if (natnump num)
+          (skip-syntax-forward "\\s-")
+        (skip-syntax-backward "\\s-")))
+    (unless (or (eq last-command this-command)
+                (if (natnump num)
+                    (looking-at "\\b")
+                  (looking-back "\\b")))
+      (if (natnump num)
+          (left-word)
+        (right-word)))
+    (mark-word arg allow-extend)))
+
+(global-set-key [remap mark-word] 'mark-whole-word)

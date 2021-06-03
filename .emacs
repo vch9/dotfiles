@@ -13,6 +13,7 @@
    (quote
     ("fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default)))
  '(fci-rule-color "#383838")
+ '(ocamlformat-enable (quote disable) t)
  '(package-selected-packages
    (quote
     (dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))))
