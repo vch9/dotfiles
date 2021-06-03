@@ -62,5 +62,7 @@
 (use-package winum
   :ensure t)
 
-(add-to-list 'load-path "/home/valentin/Documents/nl-tezos/_opam/share/emacs/site-lisp/")
-(load "/home/valentin/Documents/nl-tezos/_opam/share/emacs/site-lisp/tuareg-site-file")
+
+;; This is a horrible solution, fix-me please
+(add-to-list 'load-path "/home/valentin/Documents/tezos/master/_opam/share/emacs/site-lisp/")
+(load "/home/valentin/Documents/tezos/master/_opam/share/emacs/site-lisp/tuareg-site-file")
