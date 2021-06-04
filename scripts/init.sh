@@ -17,16 +17,19 @@ chsh -s /usr/bin/zsh
 which starship > /dev/null
 if [[ $? -eq 1 ]] ; then
   curl -fsSL https://starship.rs/install.sh | bash
-else
+fi
 
 if [ -e "$HOME/.oh-my-zsh" ] ; then
   printf "   - Skip: oh-my-zsh already installed\n"
 else
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  git clone https://github.com/zsh-users/zsh-autosuggestions \
+            $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
-
 # ---------- LINK FILES ---------- #
+rm ~/.zshrc
+
 declare -a links=(
     ".emacs"
     ".emacs.d"
