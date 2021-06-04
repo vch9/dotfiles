@@ -95,7 +95,7 @@
 (setq electric-pair-mode 1)
 
 ;; Activate OCaml Merlin by default
-(setq merlin-mode 1)
+;(setq merlin-mode 1)
 
 ;; Kill all buffers at once
 (defun nuke-all-buffers ()
