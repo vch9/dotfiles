@@ -1,3 +1,31 @@
 [character]
+format = "$symbol "
 success_symbol = "[Ψ](bold green)"
 error_symbol = "[Ψ](bold purple)"
+
+[git_branch]
+format = "<= [$branch]($style)"
+style = "bold purple"
+
+[username]
+format = "[$user]($style) :="
+style_root = "bold red"
+style_user = "bold green"
+show_always = true
+
+[directory]
+format = " [$path]($style)[$read_only]($read_only_style) "
+truncation_length = 2
+
+[git_status]
+untracked = "?"
+stashed = ""
+modified = "~"
+staged = "+"
+renamed = "r"
+deleted = "-"
+style = "bold purple"
+
+[ocaml]
+format = " >>= [$version]($style)"
+style = "bold green"
