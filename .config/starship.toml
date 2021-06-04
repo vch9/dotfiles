@@ -1,0 +1,3 @@
+[character]
+success_symbol = "[Ψ](bold green)"
+error_symbol = "[Ψ](bold purple)"

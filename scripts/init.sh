@@ -27,7 +27,12 @@ fi
 
 
 # ---------- LINK FILES ---------- #
-links=(".emacs" ".emacs.d" ".zshrc")
+declare -a links=(
+    ".emacs"
+    ".emacs.d"
+    ".zshrc"
+    ".config/starship.toml"
+)
 cd
 for x in "${links[@]}"
 do
