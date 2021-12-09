@@ -16,7 +16,7 @@
  '(ocamlformat-enable (quote disable) t)
  '(package-selected-packages
    (quote
-    (dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))))
+    (yaml dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -36,3 +36,4 @@
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
 (require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+(put 'narrow-to-region 'disabled nil)

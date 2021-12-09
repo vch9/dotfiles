@@ -4,6 +4,15 @@
 ;; Show columns
 (setq column-number-mode t)
 
+;; iedit
+(global-set-key (kbd "C-c ;") 'iedit-mode)
+
+;; white-space mode
+(setq-local whitespace-line-column 80)
+(make-variable-buffer-local 'whitespace-style)
+(setq whitespace-style '(face lines-tail))
+(global-whitespace-mode 1)
+
 ;; Hide menu
 (menu-bar-mode -1)
 
@@ -14,7 +23,7 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 ;; Show line at column 80
-(add-hook 'after-change-major-mode-hook 'fci-mode)                    
+(add-hook 'after-change-major-mode-hook 'fci-mode)
 (setq fci-rule-column 80)
 
 ;; Remove white space
@@ -121,6 +130,10 @@
 ;; Comment-uncomment
 (global-set-key (kbd "C-x :") 'comment-or-uncomment-region)
 
+;; Rebind tuareg command
+(global-set-key (kbd "C-c <left>")  'tuareg-find-alternate-file)
+(global-set-key (kbd "C-c <right>") 'tuareg-find-alternate-file)
+
 ;; Enable winum
 (winum-mode)
 
@@ -154,3 +167,6 @@ selects backward.)"
     (mark-word arg allow-extend)))
 
 (global-set-key [remap mark-word] 'mark-whole-word)
+
+;; Call compile
+(global-set-key (kbd "C-x !") 'compile)

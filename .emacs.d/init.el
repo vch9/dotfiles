@@ -62,6 +62,11 @@
 (use-package winum
   :ensure t)
 
+(use-package iedit
+  :ensure t)
+
+(use-package yaml-mode
+  :ensure t)
 
 ;; This is a horrible solution, fix-me please
 (add-to-list 'load-path "/home/valentin/Documents/tezos/master/_opam/share/emacs/site-lisp/")
