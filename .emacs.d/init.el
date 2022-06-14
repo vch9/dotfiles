@@ -68,6 +68,9 @@
 (use-package yaml-mode
   :ensure t)
 
+(use-package terraform-mode
+  :ensure t)
+
 ;; This is a horrible solution, fix-me please
 (add-to-list 'load-path "/home/valentin/Documents/tezos/master/_opam/share/emacs/site-lisp/")
 (load "/home/valentin/Documents/tezos/master/_opam/share/emacs/site-lisp/tuareg-site-file")

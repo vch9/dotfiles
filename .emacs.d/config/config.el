@@ -1,9 +1,3 @@
-;; Show lines
-(global-linum-mode 1)
-
-;; Show columns
-(setq column-number-mode t)
-
 ;; iedit
 (global-set-key (kbd "C-c ;") 'iedit-mode)
 
@@ -11,7 +5,6 @@
 (setq-local whitespace-line-column 80)
 (make-variable-buffer-local 'whitespace-style)
 (setq whitespace-style '(face lines-tail))
-(global-whitespace-mode 1)
 
 ;; Hide menu
 (menu-bar-mode -1)
@@ -170,3 +163,9 @@ selects backward.)"
 
 ;; Call compile
 (global-set-key (kbd "C-x !") 'compile)
+
+;;
+(setq-default tab-width 4)
+
+;; No tabs
+(setq-default indent-tabs-mode nil)

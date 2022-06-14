@@ -11,12 +11,12 @@
  '(custom-enabled-themes (quote (dracula)))
  '(custom-safe-themes
    (quote
-    ("fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default)))
+    ("1df608f879e1392c30bb0f323c8abf8e17f7cbf1044ea8c0f683bd385351fd8f" "fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default)))
  '(fci-rule-color "#383838")
- '(ocamlformat-enable (quote disable) t)
+ '(ocamlformat-enable (quote disable))
  '(package-selected-packages
    (quote
-    (yaml dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))))
+    (tuareg yaml dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
