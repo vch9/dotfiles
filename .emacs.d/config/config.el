@@ -50,10 +50,6 @@
       '(("t" "todo" entry (file+headline "/home/valentin/org/todo.org" "Tasks")
          "* TODO [#A] %?")))
 
-;; Change lsp file
-(setq lsp-file "~/.emacs.d/config/lsp.el")
-(load lsp-file)
-
 ;; Change org file
 (setq org-file "~/.emacs.d/config/org.el")
 (load org-file)
@@ -72,6 +68,9 @@
 
 
 ;; Dracula theme
+(use-package dracula-theme
+  :ensure t)
+
 ;; Don't change the font size for some headings and titles (default t)
 (setq dracula-enlarge-headings nil)
 
@@ -169,3 +168,52 @@ selects backward.)"
 
 ;; No tabs
 (setq-default indent-tabs-mode nil)
+
+(use-package lsp-mode
+  :ensure t
+  :commands lsp
+  :config
+  (lsp-enable-which-key-integration t))
+
+(use-package company
+  :ensure t
+  :config
+  (setq company-idle-delay 0.6
+        company-minimum-prefix-length 1))
+
+(use-package flycheck
+  :ensure t)
+
+(use-package rustic
+  :ensure
+  :bind (:map rustic-mode-map
+              ("M-j" . lsp-ui-imenu)
+              ("M-?" . lsp-find-references)
+              ("C-c C-c l" . flycheck-list-errors)
+              ("C-c C-c a" . lsp-execute-code-action)
+              ("C-c C-c r" . lsp-rename)
+              ("C-c C-c q" . lsp-workspace-restart)
+              ("C-c C-c Q" . lsp-workspace-shutdown)
+              ("C-c C-c s" . lsp-rust-analyzer-status)
+              ("C-c C-c e" . lsp-rust-analyzer-expand-macro)
+              ("C-c C-c d" . dap-hydra)
+              ("C-c C-c h" . lsp-ui-doc-glance))
+  :config
+  ;; uncomment for less flashiness
+  ;; (setq lsp-eldoc-hook nil)
+  ;; (setq lsp-enable-symbol-highlighting nil)
+  ;; (setq lsp-signature-auto-activate nil)
+
+  ;; comment to disable rustfmt on save
+  (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook))
+
+(defun rk/rustic-mode-hook ()
+  ;; so that run C-c C-c C-r works without having to confirm, but don't try to
+  ;; save rust buffers that are not file visiting. Once
+  ;; https://github.com/brotzeit/rustic/issues/253 has been resolved this should
+  ;; no longer be necessary.
+  (when buffer-file-name
+    (setq-local buffer-save-without-query t))
+  (add-hook 'before-save-hook 'lsp-format-buffer nil t))
+
+(use-package toml-mode :ensure)

@@ -19,6 +19,14 @@ alias db="dune build"
 alias dc="dune clean"
 alias dr="dune runtest"
 
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
+
+alias tezt="dune exec tezt/tests/main.exe -- "
+
+# Dirty
+alias emacs-rust="emacs -q --load /home/valentin/Documents/emacs-rust-config/standalone.el"
+
 # Functions from alias
 mkcd () {
     mkdir -p -- "$1" &&
@@ -43,3 +51,5 @@ fi
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+. "$HOME/.nvm/nvm.sh"
