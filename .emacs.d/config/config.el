@@ -216,4 +216,6 @@ selects backward.)"
     (setq-local buffer-save-without-query t))
   (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
-(use-package toml-mode :ensure)
+(setq warning-minimum-level :error)
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)

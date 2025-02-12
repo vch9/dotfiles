@@ -6,7 +6,6 @@ plugins=(git \
 
 source $ZSH/oh-my-zsh.sh
 
-
 # Alias
 alias .3="../../../"
 alias .2="../../"
@@ -23,6 +22,8 @@ alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 
 alias tezt="dune exec tezt/tests/main.exe -- "
+alias tezt-etherlink="dune exec etherlink/tezt/tests/main.exe -- /dal /threshold_encryption /ci_disabled"
+alias tezt-etherlink-raw="dune exec etherlink/tezt/tests/main.exe --"
 
 # Dirty
 alias emacs-rust="emacs -q --load /home/valentin/Documents/emacs-rust-config/standalone.el"
@@ -53,3 +54,10 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 
 . "$HOME/.nvm/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export OCTEZ_RUST_DEPS_TARGET_DIR=/home/valentin/work/tezos/src/rust_deps/target
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"

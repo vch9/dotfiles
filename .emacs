@@ -10,11 +10,10 @@
    ["#000000" "#8b0000" "#00ff00" "#ffa500" "#7b68ee" "#dc8cc3" "#93e0e3" "#dcdccc"])
  '(custom-enabled-themes '(dracula))
  '(custom-safe-themes
-   '("1df608f879e1392c30bb0f323c8abf8e17f7cbf1044ea8c0f683bd385351fd8f" "fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default))
+   '("603a831e0f2e466480cdc633ba37a0b1ae3c3e9a4e90183833bc4def3421a961" "1df608f879e1392c30bb0f323c8abf8e17f7cbf1044ea8c0f683bd385351fd8f" "fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default))
  '(fci-rule-color "#383838")
- '(ocamlformat-enable 'disable)
  '(package-selected-packages
-   '(flycheck rustic tuareg yaml dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))
+   '(diff-hl toml-mode flycheck rustic tuareg yaml dune ocamlformat company dracula-theme yasnippet afternoon cyberpunk-theme which-key use-package))
  '(safe-local-variable-values
    '((lsp-rust-analyzer-linked-projects .
                                         ["src/kernel_evm/Cargo.toml"])
